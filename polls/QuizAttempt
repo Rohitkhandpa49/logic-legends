@@ -1,0 +1,50 @@
+{
+  "name": "QuizAttempt",
+  "type": "object",
+  "properties": {
+    "quiz_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "total_questions": {
+      "type": "number"
+    },
+    "accuracy": {
+      "type": "number",
+      "description": "Percentage accuracy"
+    },
+    "time_taken": {
+      "type": "number",
+      "description": "Time taken in seconds"
+    },
+    "answers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_index": {
+            "type": "number"
+          },
+          "selected_index": {
+            "type": "number"
+          },
+          "is_correct": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "quiz_id",
+    "score"
+  ]
+}
