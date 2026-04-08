@@ -1,0 +1,62 @@
+{
+  "name": "Quiz",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct_index": {
+            "type": "number"
+          },
+          "time_limit": {
+            "type": "number",
+            "description": "Seconds per question"
+          },
+          "explanation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "total_time_limit": {
+      "type": "number",
+      "description": "Total quiz time in seconds"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "closed"
+      ],
+      "default": "active"
+    },
+    "share_code": {
+      "type": "string"
+    },
+    "attempts_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "questions"
+  ]
+}

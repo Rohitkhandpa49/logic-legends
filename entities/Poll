@@ -1,0 +1,58 @@
+{
+  "name": "Poll",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Poll question/title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional description"
+    },
+    "options": {
+      "type": "array",
+      "description": "Poll options (2-6)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "votes": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the poll expires"
+    },
+    "is_anonymous": {
+      "type": "boolean",
+      "default": false
+    },
+    "total_votes": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "closed"
+      ],
+      "default": "active"
+    },
+    "share_code": {
+      "type": "string",
+      "description": "Unique share code for the poll"
+    }
+  },
+  "required": [
+    "title",
+    "options"
+  ]
+}
